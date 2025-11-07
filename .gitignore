@@ -1,0 +1,64 @@
+.venv
+.idea
+.env
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+config.json
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+.eggs/
+lib/
+lib64/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environment
+venv/
+.env
+ENV/
+env/
+.env/
+.venv/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Python IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.tmp
+*.log
+
+# Test results
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+*.xml
+*.html
+/data
+# Miscellaneous
+*.DS_Store
+Thumbs.db
+Dockerfile
+docker-compose.yml
+app/database/backup.sql
+# remember about: git rm --cached docker-compose.yml
+#docker-compose.yml
+.coverage

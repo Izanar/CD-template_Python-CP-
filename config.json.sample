@@ -1,0 +1,39 @@
+{
+  "provider": {
+    "url": "http://127.0.0.1:8030"
+  },
+  "web_server": {
+    "host": "0.0.0.0",
+    "port": 7070,
+    "docs": true
+  },
+  "postgres": {
+    "dsn": "postgresql+psycopg_async://user:password@localhost:54377/db",
+    "alembic": "postgresql+psycopg_async://user:password@localhost:54377/db"
+  },
+  "jwt_token": {
+    "secret_key": "YOUR_JWT_SECRET_KEY",
+    "algorithm": "HS256"
+  },
+  "s3_config": {
+    "bucket_name": "your-bucket-name",
+    "access_key": "YOUR_AWS_ACCESS_KEY",
+    "secret_key": "YOUR_AWS_SECRET_KEY",
+    "user": "your-s3-user",
+    "region": "eu-central-1"
+  },
+  "redis": {
+    "url": "redis://localhost:6379"
+  },
+  "telegram": {
+    "token": "YOUR_TELEGRAM_BOT_TOKEN",
+    "link": "https://t.me/your_bot?start="
+  },
+  "notifications": {
+    "url": "https://your-notifications-url.com/ingest/v1/endpoint",
+    "api_key": "YOUR_NOTIFICATIONS_API_KEY"
+  },
+  "external_api": {
+    "api_key": "YOUR_EXTERNAL_API_KEY"
+  }
+}

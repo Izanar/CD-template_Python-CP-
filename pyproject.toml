@@ -1,0 +1,129 @@
+[tool.poetry]
+name = "diamondhelper"
+version = "0.1.0"
+description = ""
+authors = ["Dima Kravchenko <kda2019@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.4"
+uvicorn = "^0.32.0"
+httpx = "^0.27.2"
+uvloop = "^0.21.0"
+sqlalchemy = "^2.0.36"
+pydantic-settings = "^2.6.0"
+psycopg = {extras = ["binary"], version = "^3.2.3"}
+alembic = "^1.13.3"
+greenlet = "^3.1.1"
+aioboto3 = "^13.2.0"
+structlog = "^25.1.0"
+rich = "^13.9.4"
+orjson = "^3.10.15"
+pytz = "^2025.1"
+asyncpg = "^0.30.0"
+python-jose = "^3.4.0"
+python-multipart = "^0.0.20"
+passlib = "^1.7.4"
+bcrypt = "^4.2.1"
+gunicorn = "^23.0.0"
+prometheus-fastapi-instrumentator = ">=7.1.0"
+uuid = "^1.30"
+python-dotenv = "^1.1.1"
+aiogram = "^3.21.0"
+pycountry = "^24.6.1"
+tenacity = "^9.1.2"
+sqlalchemy-utils = "^0.42.0"
+cryptography = "^45.0.7"
+
+
+[tool.poetry.group.dev.dependencies]
+sqlalchemy-stubs = "^0.4"
+ruff = "^0.11.2"
+pre-commit = "^4.2.0"
+pytest = "^7.4"
+pytest-asyncio = "^0.23.0"
+aiosqlite = "^0.19.0"
+pytest-cov = "^6.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+# List of enabled rulsets.
+# See https://docs.astral.sh/ruff/rules/ for more information.
+lint.select = [
+    "E", # Error
+    "F", # Pyflakes
+    "W", # Pycodestyle
+    "C90", # McCabe complexity
+    "I", # Isort
+    "N", # pep8-naming
+    "D", # Pydocstyle
+    "ANN", # Pytype annotations
+    "S", # Bandit
+    "B", # Bugbear
+    "COM", # Commas
+    "C4", # Comprehensions
+    "ISC", # Implicit string concat
+    "PIE", # Unnecessary code
+    "T20", # Catch prints
+    "PYI", # validate pyi files
+    "Q", # Checks for quotes
+    "RSE", # Checks raise statements
+    "RET", # Checks return statements
+    "SLF", # Self checks
+    "SIM", # Simplificator
+    "PTH", # Pathlib checks
+    "ERA", # Checks for commented out code
+    "PL", # PyLint checks
+    "RUF", # Specific to Ruff checks
+]
+lint.ignore = [
+    "D101", # Missing docstring in public class
+    "D102", # Missing docstring in public method
+    "D103", # Missing docstring in public function
+    "D105", # Missing docstring in magic method
+    "D107", # Missing docstring in __init__
+    "B008", # Do not perform function calls in argument defaults
+    "D211", # No blank lines allowed before class docstring
+    "D212", # Multi-line docstring summary should start at the first line
+    "D401", # First line should be in imperative mood
+    "D104", # Missing docstring in public package
+    "D100", # Missing docstring in public module
+    "D202", # No blank lines allowed after function docstring
+    "ANN401", # typing.Any are disallowed in `**kwargs
+    "ANN204", # Missing type annotation for special method
+    "ANN201", # Missing return type annotation
+    "ANN001", # Missing type annotation
+    "PLR0913", # Too many arguments for function call
+    "D106", # Missing docstring in public nested class
+    "COM812", # Missing trailing comma
+    "B904", # Checks for raise statements in exception handlers that lack a from clause.
+    "B024", # Checks for an abstract base class, but it has no abstract methods or properties
+    "RUF002", # Ru comments
+    "D205",
+    "N805"
+]
+lint.mccabe = { max-complexity = 10 }
+exclude = [
+    "app/alembic/versions",
+    ".venv/",
+]
+line-length = 120
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "S101", # Use of assert detected
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+ignore-decorators = ["typing.overload"]
+
+[tool.ruff.lint.pylint]
+allow-magic-value-types = ["int", "str", "float", "bytes"]
